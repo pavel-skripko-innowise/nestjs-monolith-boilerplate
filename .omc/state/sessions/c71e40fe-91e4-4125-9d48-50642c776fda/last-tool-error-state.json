@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"jq -e '.permissions.ask' B:/converter/.claude/settings.local.json 2>&1\",\"description\":\"Validate settings.local.json JSON syntax and structure\"}",
+  "error": "Exit code 127\n/usr/bin/bash: line 1: jq: command not found",
+  "timestamp": "2026-08-31T13:28:11.095Z",
+  "retry_count": 1
+}

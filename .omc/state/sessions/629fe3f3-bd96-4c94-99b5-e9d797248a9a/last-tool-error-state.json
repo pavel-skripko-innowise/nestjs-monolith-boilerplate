@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"OMC_VERSION=\\\"\\\"\\nif [ -f \\\"${CLAUDE_CONFIG_DIR:-$HOME/.claude}/CLAUDE.md\\\" ]; then\\n  OMC_VERSION=$(grep -m1 'OMC:VERSION:' \\\"${CLAUDE_CONFIG_DIR:-$HOME/.claude}/CLAUDE.md\\\" 2>/dev/null |...",
+  "error": "Exit code 1\nVersion: 5.0.0\nERROR: jq is required to update /c/Users/PC-PF-5JXA17/.claude/.omc-config.json safely.\nInstall jq and rerun setup. Existing config was not modified.",
+  "timestamp": "2026-08-27T09:53:52.241Z",
+  "retry_count": 1
+}

@@ -1,0 +1,352 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1788187089391,
+  "projectRoot": "B:\\converter",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "@nestjs/core",
+        "version": "11.0.1",
+        "category": "backend"
+      },
+      {
+        "name": "jest",
+        "version": "30.0.0",
+        "category": "testing"
+      }
+    ],
+    "packageManager": "npm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "npm run build",
+    "testCommand": "npm test",
+    "lintCommand": "npm run lint",
+    "devCommand": "npm run start",
+    "scripts": {
+      "build": "nest build",
+      "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+      "start": "nest start",
+      "start:dev": "nest start --watch",
+      "start:debug": "nest start --debug --watch",
+      "start:prod": "node dist/main",
+      "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+      "test": "jest",
+      "test:watch": "jest --watch",
+      "test:cov": "jest --coverage",
+      "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+      "test:e2e": "jest --config ./test/jest-e2e.json",
+      "typeorm": "typeorm-ts-node-commonjs",
+      "migration:create": "npm run typeorm -- migration:create src/database/migrations/Migration",
+      "migration:generate": "npm run typeorm -- migration:generate src/database/migrations/Migration -d src/database/data-source.ts",
+      "migration:run": "npm run typeorm -- migration:run -d src/database/data-source.ts",
+      "migration:revert": "npm run typeorm -- migration:revert -d src/database/data-source.ts",
+      "migration:show": "npm run typeorm -- migration:show -d src/database/data-source.ts"
+    }
+  },
+  "conventions": {
+    "namingStyle": "camelCase",
+    "importStyle": "ES modules",
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "src",
+      "test"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "dist": {
+      "path": "dist",
+      "purpose": "Distribution/build output",
+      "fileCount": 5,
+      "lastAccessed": 1788187089343,
+      "keyFiles": [
+        "main.d.ts",
+        "main.js",
+        "main.js.map",
+        "tsconfig.build.tsbuildinfo",
+        "tsconfig.tsbuildinfo"
+      ]
+    },
+    "requests": {
+      "path": "requests",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1788187089343,
+      "keyFiles": [
+        "auth.http"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 1,
+      "lastAccessed": 1788187089351,
+      "keyFiles": [
+        "main.ts"
+      ]
+    },
+    "test": {
+      "path": "test",
+      "purpose": "Test files",
+      "fileCount": 2,
+      "lastAccessed": 1788187089352,
+      "keyFiles": [
+        "app.e2e-spec.ts",
+        "jest-e2e.json"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "src/modules/auth/auth.controller.ts",
+      "accessCount": 6,
+      "lastAccessed": 1788186836130,
+      "type": "file"
+    },
+    {
+      "path": "src/core/database/database.module.ts",
+      "accessCount": 4,
+      "lastAccessed": 1787840141451,
+      "type": "file"
+    },
+    {
+      "path": "test/app.e2e-spec.ts",
+      "accessCount": 4,
+      "lastAccessed": 1788178841447,
+      "type": "file"
+    },
+    {
+      "path": "package.json",
+      "accessCount": 3,
+      "lastAccessed": 1788178573304,
+      "type": "file"
+    },
+    {
+      "path": "src/core/health/health.service.spec.ts",
+      "accessCount": 3,
+      "lastAccessed": 1788179175076,
+      "type": "file"
+    },
+    {
+      "path": "test/jest-e2e.json",
+      "accessCount": 3,
+      "lastAccessed": 1788181055363,
+      "type": "file"
+    },
+    {
+      "path": "src/core/config/config.types.ts",
+      "accessCount": 3,
+      "lastAccessed": 1788186841870,
+      "type": "file"
+    },
+    {
+      "path": "src/core/config/config.validation.ts",
+      "accessCount": 3,
+      "lastAccessed": 1788186848020,
+      "type": "file"
+    },
+    {
+      "path": ".env",
+      "accessCount": 3,
+      "lastAccessed": 1788186852016,
+      "type": "file"
+    },
+    {
+      "path": ".env.example",
+      "accessCount": 3,
+      "lastAccessed": 1788186852203,
+      "type": "file"
+    },
+    {
+      "path": "src/main.ts",
+      "accessCount": 3,
+      "lastAccessed": 1788187822575,
+      "type": "file"
+    },
+    {
+      "path": "src/modules/users/users.module.ts",
+      "accessCount": 2,
+      "lastAccessed": 1787838433085,
+      "type": "file"
+    },
+    {
+      "path": "src/modules/auth/auth.module.ts",
+      "accessCount": 2,
+      "lastAccessed": 1787840489504,
+      "type": "file"
+    },
+    {
+      "path": "src/core/app/app.module.ts",
+      "accessCount": 2,
+      "lastAccessed": 1787840494064,
+      "type": "file"
+    },
+    {
+      "path": "src/database/data-source.ts",
+      "accessCount": 2,
+      "lastAccessed": 1787841215735,
+      "type": "file"
+    },
+    {
+      "path": "src/database/migrations/1787841224258-CreateUsers.migration.ts",
+      "accessCount": 2,
+      "lastAccessed": 1787927463377,
+      "type": "file"
+    },
+    {
+      "path": "src/core/health/health.controller.spec.ts",
+      "accessCount": 2,
+      "lastAccessed": 1788179177823,
+      "type": "file"
+    },
+    {
+      "path": "src",
+      "accessCount": 2,
+      "lastAccessed": 1788181968951,
+      "type": "directory"
+    },
+    {
+      "path": "src/core/throttler/throttler.module.ts",
+      "accessCount": 2,
+      "lastAccessed": 1788182393022,
+      "type": "file"
+    },
+    {
+      "path": "src/modules/auth/auth.service.ts",
+      "accessCount": 2,
+      "lastAccessed": 1788182450847,
+      "type": "file"
+    },
+    {
+      "path": "CLAUDE.md",
+      "accessCount": 2,
+      "lastAccessed": 1788183039980,
+      "type": "file"
+    },
+    {
+      "path": "src/modules/auth/dto/register.dto.ts",
+      "accessCount": 2,
+      "lastAccessed": 1788187827609,
+      "type": "file"
+    },
+    {
+      "path": "docker-compose.yml",
+      "accessCount": 1,
+      "lastAccessed": 1787832345180,
+      "type": "file"
+    },
+    {
+      "path": "src/modules/users/entities/user-role.enum.ts",
+      "accessCount": 1,
+      "lastAccessed": 1787835103029,
+      "type": "file"
+    },
+    {
+      "path": "src/modules/users/entities/user.entity.ts",
+      "accessCount": 1,
+      "lastAccessed": 1787835104980,
+      "type": "file"
+    },
+    {
+      "path": "src/modules/users/users.service.ts",
+      "accessCount": 1,
+      "lastAccessed": 1787838431584,
+      "type": "file"
+    },
+    {
+      "path": "tsconfig.json",
+      "accessCount": 1,
+      "lastAccessed": 1787840479849,
+      "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 1,
+      "lastAccessed": 1787841211894,
+      "type": "directory"
+    },
+    {
+      "path": "src/database/migrations/1787841224258-Migration.ts",
+      "accessCount": 1,
+      "lastAccessed": 1787841230399,
+      "type": "file"
+    },
+    {
+      "path": "src/core/config/config.module.ts",
+      "accessCount": 1,
+      "lastAccessed": 1787925877965,
+      "type": "file"
+    },
+    {
+      "path": "src/core/config/config.service.ts",
+      "accessCount": 1,
+      "lastAccessed": 1787925877981,
+      "type": "file"
+    },
+    {
+      "path": "requests/auth.http",
+      "accessCount": 1,
+      "lastAccessed": 1788177170461,
+      "type": "file"
+    },
+    {
+      "path": "src/modules/auth/auth.service.spec.ts",
+      "accessCount": 1,
+      "lastAccessed": 1788178548543,
+      "type": "file"
+    },
+    {
+      "path": "src/core/health/health.service.ts",
+      "accessCount": 1,
+      "lastAccessed": 1788178603540,
+      "type": "file"
+    },
+    {
+      "path": "src/core/health/health.module.ts",
+      "accessCount": 1,
+      "lastAccessed": 1788178604322,
+      "type": "file"
+    },
+    {
+      "path": "src/core/health/health.controller.ts",
+      "accessCount": 1,
+      "lastAccessed": 1788179165631,
+      "type": "file"
+    },
+    {
+      "path": ".claude/settings.local.json",
+      "accessCount": 1,
+      "lastAccessed": 1788182885726,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}
