@@ -29,4 +29,35 @@ export interface Config {
   POSTGRES_SYNCHRONIZE?: boolean;
   POSTGRES_LOGGING?: boolean;
   POSTGRES_MIGRATIONS_RUN?: boolean;
+
+  /**
+   * JWT auth options
+   */
+  JWT_SECRET: string;
+  JWT_EXPIRES_IN?: string;
+  JWT_REFRESH_SECRET: string;
+  JWT_REFRESH_EXPIRES_IN?: string;
+
+  /**
+   * OTP (login confirmation) options
+   */
+  OTP_LENGTH?: number;
+  OTP_TTL_MINUTES?: number;
+  OTP_MAX_ATTEMPTS?: number;
+  OTP_RESEND_COOLDOWN_SECONDS?: number;
+
+  /**
+   * SMTP (mail sending) options — optional; MailService falls back to
+   * console logging when SMTP_URL is not set.
+   */
+  SMTP_URL?: string;
+  MAIL_FROM?: string;
+
+  /**
+   * File transformation (CSV/JSON/XML/YAML) size limits, bytes
+   */
+  CONVERT_MAX_SIZE_CSV?: number;
+  CONVERT_MAX_SIZE_JSON?: number;
+  CONVERT_MAX_SIZE_XML?: number;
+  CONVERT_MAX_SIZE_YAML?: number;
 }

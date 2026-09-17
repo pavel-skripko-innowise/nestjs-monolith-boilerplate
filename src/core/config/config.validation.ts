@@ -4,7 +4,7 @@ import { Config } from './config.types';
 
 export const configValidationSchema = Joi.object<Config>({
   PORT: Joi.number().port().required(),
-  NODE_ENV: Joi.string().valid('development', 'production').required(),
+  NODE_ENV: Joi.string().valid('development', 'production', 'test').required(),
 
   /**
    * Cookie secret
@@ -33,4 +33,34 @@ export const configValidationSchema = Joi.object<Config>({
   POSTGRES_SYNCHRONIZE: Joi.boolean().optional().default(false),
   POSTGRES_LOGGING: Joi.boolean().optional().default(false),
   POSTGRES_MIGRATIONS_RUN: Joi.boolean().optional().default(false),
+
+  /**
+   * JWT auth options
+   */
+  JWT_SECRET: Joi.string().required(),
+  JWT_EXPIRES_IN: Joi.string().optional().default('15m'),
+  JWT_REFRESH_SECRET: Joi.string().required(),
+  JWT_REFRESH_EXPIRES_IN: Joi.string().optional().default('30d'),
+
+  /**
+   * OTP (login confirmation) options
+   */
+  OTP_LENGTH: Joi.number().optional().default(6),
+  OTP_TTL_MINUTES: Joi.number().optional().default(10),
+  OTP_MAX_ATTEMPTS: Joi.number().optional().default(5),
+  OTP_RESEND_COOLDOWN_SECONDS: Joi.number().optional().default(60),
+
+  /**
+   * SMTP (mail sending) options
+   */
+  SMTP_URL: Joi.string().optional(),
+  MAIL_FROM: Joi.string().optional(),
+
+  /**
+   * File transformation (CSV/JSON/XML/YAML) size limits, bytes
+   */
+  CONVERT_MAX_SIZE_CSV: Joi.number().optional().default(5_000_000),
+  CONVERT_MAX_SIZE_JSON: Joi.number().optional().default(5_000_000),
+  CONVERT_MAX_SIZE_XML: Joi.number().optional().default(5_000_000),
+  CONVERT_MAX_SIZE_YAML: Joi.number().optional().default(5_000_000),
 });

@@ -6,10 +6,14 @@ import { HealthModule } from '@/core/health/health.module';
 import { ThrottlerModule } from '@/core/throttler/throttler.module';
 
 /**
- * 
+ *
  * Application modules
- * 
+ *
  */
+import { AuthModule } from '@/modules/auth/auth.module';
+import { FileTransformModule } from '@/modules/file-transform/file-transform.module';
+import { RbacModule } from '@/modules/rbac/rbac.module';
+import { UserProfileModule } from '@/modules/user-profile/user-profile.module';
 import { UsersModule } from '@/modules/users/users.module';
 
 @Module({
@@ -19,11 +23,15 @@ import { UsersModule } from '@/modules/users/users.module';
     HealthModule,
     ThrottlerModule,
     /**
-     * 
+     *
      * Application modules
-     * 
+     *
      */
     UsersModule,
+    AuthModule,
+    RbacModule,
+    UserProfileModule,
+    FileTransformModule,
   ],
 })
 export class AppModule {}

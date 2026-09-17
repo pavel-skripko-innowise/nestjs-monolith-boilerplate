@@ -1,9 +1,16 @@
 import { NestFactory } from '@nestjs/core';
-import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
+import {
+  FastifyAdapter,
+  NestFastifyApplication,
+} from '@nestjs/platform-fastify';
 import compression from '@fastify/compress';
 import fastifyCookie from '@fastify/cookie';
+import multipart from '@fastify/multipart';
 import { ValidationPipe } from '@nestjs/common';
-import { initializeTransactionalContext, StorageDriver } from 'typeorm-transactional';
+import {
+  initializeTransactionalContext,
+  StorageDriver,
+} from 'typeorm-transactional';
 
 import { AppModule } from './core/app/app.module';
 import { ConfigService } from '@/core/config/config.service';
@@ -13,7 +20,7 @@ async function bootstrap() {
 
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
-    new FastifyAdapter()
+    new FastifyAdapter(),
   );
 
   await app.register(compression);
@@ -21,6 +28,9 @@ async function bootstrap() {
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
+      transform: true,
+      forbidNonWhitelisted: true,
+      transformOptions: { exposeUnsetFields: false },
     }),
   );
 
@@ -40,6 +50,18 @@ async function bootstrap() {
 
   await app.register(fastifyCookie, {
     secret: configService.get('COOKIE_SECRET'),
+  });
+
+  await app.register(multipart, {
+    limits: {
+      fileSize: Math.max(
+        Number(configService.get('CONVERT_MAX_SIZE_CSV')),
+        Number(configService.get('CONVERT_MAX_SIZE_JSON')),
+        Number(configService.get('CONVERT_MAX_SIZE_XML')),
+        Number(configService.get('CONVERT_MAX_SIZE_YAML')),
+      ),
+      files: 1,
+    },
   });
 
   const port = configService.get('PORT');
